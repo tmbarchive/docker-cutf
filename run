@@ -4,4 +4,4 @@ nvidia-docker run \
     -v $(pwd):/notebooks \
     -v $(pwd)/data/.:/data \
     -v $(pwd)/models/.:/models \
-    -it -p 8888:8888 tf "$@"
+    -it -p ${port:-8888}:8888 tf "$@"
