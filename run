@@ -1,0 +1,7 @@
+#!/bin/sh
+# nvidia-docker run -v `pwd`:/root -w /root -it -p 8888:8888 tf "$@"
+nvidia-docker run \
+    -v $(pwd):/notebooks \
+    -v $(pwd)/data/.:/data \
+    -v $(pwd)/models/.:/models \
+    -it -p 8888:8888 tf "$@"
